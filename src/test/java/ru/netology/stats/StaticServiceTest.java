@@ -1,10 +1,11 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class StaticServiceTest {
     @org.testng.annotations.Test
-    public void shouldFindMinSales() {
+    public void shouldFindMonthMinSales() {
         StaticService service = new StaticService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -15,7 +16,7 @@ public class StaticServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldFindMaxSales() {
+    public void shouldFindMonthMaxSales() {
         StaticService service = new StaticService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -25,7 +26,7 @@ public class StaticServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldFindAmountSales() {
+    public void shouldFindSumSalesAllMonth() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedAmount = 180;
@@ -34,7 +35,7 @@ public class StaticServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void ShouldFindOvrlSales() {
+    public void ShouldFindAverageNumberSalesPerMonth() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedOvrl = 15;
@@ -43,7 +44,7 @@ public class StaticServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldFindMonthLessOvrl() {
+    public void shouldFindMonthBelowAverageSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonthLess = 5;
@@ -52,7 +53,7 @@ public class StaticServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void shouldFindMonthMoreOvrl() {
+    public void shouldFindMonthAboveAverageSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMoreLess = 5;
