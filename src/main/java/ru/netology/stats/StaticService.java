@@ -35,23 +35,16 @@ public class StaticService {
     }
 
     public long getOvrlSales(long[] sales) {
-        int amount = 0;
+        long amount = getAmountSales(sales);
         int ovrl = 0;
-        for (long i : sales) {
-            amount += i;
-        }
-        ovrl = amount / sales.length;
+        ovrl = (int) (amount / sales.length);
         return ovrl;
+
     }
 
     public long getMonthLessOvrl(long[] sales) {
         int monthLessOvrl = 0;
-        int amount = 0;
-        int ovrl = 0;
-        for (long i : sales) {
-            amount += i;
-        }
-        ovrl = amount / sales.length;
+        long ovrl = getOvrlSales(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < ovrl) {
                 monthLessOvrl = monthLessOvrl + 1;
@@ -62,12 +55,7 @@ public class StaticService {
 
     public long getMonthMoreOvrl(long[] sales) {
         int monthMoreOvrl = 0;
-        int amount = 0;
-        int ovrl = 0;
-        for (long i : sales) {
-            amount += i;
-        }
-        ovrl = amount / sales.length;
+        long ovrl = getOvrlSales(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > ovrl) {
                 monthMoreOvrl = monthMoreOvrl + 1;

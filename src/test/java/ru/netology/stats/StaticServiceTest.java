@@ -1,11 +1,9 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import ru.netology.stats.StaticService;
 
 public class StaticServiceTest {
-    @Test
+    @org.testng.annotations.Test
     public void shouldFindMinSales() {
         StaticService service = new StaticService();
 
@@ -16,7 +14,7 @@ public class StaticServiceTest {
 
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void shouldFindMaxSales() {
         StaticService service = new StaticService();
 
@@ -26,7 +24,7 @@ public class StaticServiceTest {
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void shouldFindAmountSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -35,7 +33,7 @@ public class StaticServiceTest {
         Assertions.assertEquals(expectedAmount, actualAmount);
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void ShouldFindOvrlSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -44,7 +42,7 @@ public class StaticServiceTest {
         Assertions.assertEquals(expectedOvrl, actualOvrl);
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void shouldFindMonthLessOvrl() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -53,7 +51,7 @@ public class StaticServiceTest {
         Assertions.assertEquals(expectedMonthLess, actualMonthLess);
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void shouldFindMonthMoreOvrl() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
