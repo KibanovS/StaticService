@@ -1,7 +1,7 @@
 package ru.netology.stats;
 
 public class StaticService {
-    public int getMinSales(long[] sales) {
+    public int getMonthWithMinSales(long[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -13,7 +13,7 @@ public class StaticService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int getMaxSales(long[] sales) {
+    public int getMonthWithMaxSales(long[] sales) {
 
         int minMonth = 0;
 
@@ -25,7 +25,7 @@ public class StaticService {
         return minMonth + 1;
     }
 
-    public long getAmountSales(long[] sales) {
+    public long getSumAllSalesMonth(long[] sales) {
         long amount = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -34,17 +34,17 @@ public class StaticService {
         return amount;
     }
 
-    public long getOvrlSales(long[] sales) {
-        long amount = getAmountSales(sales);
+    public long getAverageSalesAmountMonth(long[] sales) {
+        long amount = getSumAllSalesMonth(sales);
         int ovrl = 0;
         ovrl = (int) (amount / sales.length);
         return ovrl;
 
     }
 
-    public long getMonthLessOvrl(long[] sales) {
+    public long getTheNumberOfMonthsWithSalesBelowAverage(long[] sales) {
         int monthLessOvrl = 0;
-        long ovrl = getOvrlSales(sales);
+        long ovrl = getAverageSalesAmountMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < ovrl) {
                 monthLessOvrl = monthLessOvrl + 1;
@@ -53,9 +53,9 @@ public class StaticService {
         return monthLessOvrl;
     }
 
-    public long getMonthMoreOvrl(long[] sales) {
+    public long getTheNumberMonthsWithAboveAverageSales(long[] sales) {
         int monthMoreOvrl = 0;
-        long ovrl = getOvrlSales(sales);
+        long ovrl = getAverageSalesAmountMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > ovrl) {
                 monthMoreOvrl = monthMoreOvrl + 1;

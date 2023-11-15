@@ -9,7 +9,7 @@ public class StaticServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 9;
-        int actualMonth = service.getMinSales(sales);
+        int actualMonth = service.getMonthWithMinSales(sales);
         Assertions.assertEquals(expectedMonth, actualMonth);
 
     }
@@ -20,7 +20,7 @@ public class StaticServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 8;
-        int actualMonth = service.getMaxSales(sales);
+        int actualMonth = service.getMonthWithMaxSales(sales);
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
 
@@ -29,7 +29,7 @@ public class StaticServiceTest {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedAmount = 180;
-        long actualAmount = service.getAmountSales(sales);
+        long actualAmount = service.getSumAllSalesMonth(sales);
         Assertions.assertEquals(expectedAmount, actualAmount);
     }
 
@@ -38,7 +38,7 @@ public class StaticServiceTest {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedOvrl = 15;
-        long actualOvrl = service.getOvrlSales(sales);
+        long actualOvrl = service.getAverageSalesAmountMonth(sales);
         Assertions.assertEquals(expectedOvrl, actualOvrl);
     }
 
@@ -47,7 +47,7 @@ public class StaticServiceTest {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonthLess = 5;
-        long actualMonthLess = service.getMonthLessOvrl(sales);
+        long actualMonthLess = service.getTheNumberOfMonthsWithSalesBelowAverage(sales);
         Assertions.assertEquals(expectedMonthLess, actualMonthLess);
     }
 
@@ -56,7 +56,7 @@ public class StaticServiceTest {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMoreLess = 5;
-        long actualMoreLess = service.getMonthMoreOvrl(sales);
+        long actualMoreLess = service.getTheNumberMonthsWithAboveAverageSales(sales);
         Assertions.assertEquals(expectedMoreLess, actualMoreLess);
     }
 }
