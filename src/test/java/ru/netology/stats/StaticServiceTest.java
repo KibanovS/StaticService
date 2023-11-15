@@ -38,26 +38,26 @@ public class StaticServiceTest {
     public void ShouldFindAverageNumberSalesPerMonth() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expectedOvrl = 15;
-        long actualOvrl = service.getAverageSalesAmountMonth(sales);
-        Assertions.assertEquals(expectedOvrl, actualOvrl);
+        int expectedAvg = 15;
+        long actualAvg = service.getAverageSalesAmountMonth(sales);
+        Assertions.assertEquals(expectedAvg, actualAvg);
     }
 
     @org.testng.annotations.Test
     public void shouldFindMonthBelowAverageSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expectedMonthLess = 5;
-        long actualMonthLess = service.getTheNumberOfMonthsWithSalesBelowAverage(sales);
-        Assertions.assertEquals(expectedMonthLess, actualMonthLess);
+        int expectedMonths = 5;
+        long actualMonths = service.getTheNumberOfMonthsWithSalesBelowAverage(sales);
+        Assertions.assertEquals(expectedMonths, actualMonths);
     }
 
     @org.testng.annotations.Test
     public void shouldFindMonthAboveAverageSales() {
         StaticService service = new StaticService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expectedMoreLess = 5;
-        long actualMoreLess = service.getTheNumberMonthsWithAboveAverageSales(sales);
-        Assertions.assertEquals(expectedMoreLess, actualMoreLess);
+        int expectedMonths = 5;
+        long actualMonths = service.getTheNumberMonthsWithAboveAverageSales(sales);
+        Assertions.assertEquals(expectedMonths, actualMonths);
     }
 }
