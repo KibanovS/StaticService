@@ -43,14 +43,14 @@ public class StaticService {
     }
 
     public long getTheNumberOfMonthsWithSalesBelowAverage(long[] sales) {
-        int monthLessOvrl = 0;
+        int monthLessAvg = 0;
         long avg = getAverageSalesAmountMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
-                monthLessOvrl = monthLessOvrl + 1;
+                monthLessAvg = monthLessAvg + 1;
             }
         }
-        return monthLessOvrl;
+        return monthLessAvg;
     }
 
     public long getTheNumberMonthsWithAboveAverageSales(long[] sales) {
